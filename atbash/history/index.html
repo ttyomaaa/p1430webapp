@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Атбаш</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+}
+   </style>
+</head>
+
+<body>
+	<div>
+        <b>Историческая справка:</b><br>
+        Жители Иудейского царства (500 г. до н. э.) изобрели простейший шифр замены Атбаш. Правило шифрования состоит в замене i -й буквы алфавита буквой с номером n − i + 1 , где n — число букв в алфавите.<br><br>
+        Название шифра Атбаш обусловлено принципом замены букв. Это слово составлено из букв Алеф, Таф, Бет, Шин, то есть первой и последней, второй и предпоследней букв еврейского алфавита.<br><br>
+        В Ветхом Завете Библии существует пример использования шифра Атбаш, а именно в книге Иеремии (глава 25, стих 26)  пишется:<br><br>
+        “и всех царей севера, близких друг к другу и дальних, и все царства земные, которые на лице земли, а царь Сесаха выпьет после них.”<br><br>
+        В еврейском языке слово “Сесах” записывается как “шин-шин-каф”, где “шин” — это предпоследняя буква, а “каф” — двенадцатая буква с конца алфавита. Если мы эти буквы соответственно заменим на вторую и двенадцатую букву с начала алфавита, то получим слово “бет-бет-ламед”. В переводе на английский это “Babel”, то есть “Вавилон”.<br><br>
+	</div>
+	<img src="img1.png">
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ВЕРНУТЬСЯ В МЕНЮ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

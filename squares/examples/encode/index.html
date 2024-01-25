@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Два квадрата</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+		<b>Пример шифрования:</b><br>
+		Рассмотрим следующий пример заполнения квадратов.<br>
+        <img src="img1.png"><br>
+		Пусть мы хотим передать сообщение <i>"ПАРОЛЬ: КИНО"</i>. Разбиваем сообщение на биграммы: ПА РО ЛЬ :_(пробел) КИ НО. В левом квадрате находим первую букву биграммы, в правом – вторую.<br><br>
+        По диагоналям прямоугольника находим соответствующую паре ПА пару :У.<br>
+        <img src="img2.png"><br>
+        Паре букв РО соответствует пара букв ТБ. Аналогично зашифровываем остальные биграммы.<br>
+        Получаем шифртекст: <i>“:УТБУЦХХЪРТЬ”</i>.<br><br>
+        Отдельно рассмотрим случай зашифрования биграммы, буквы которой стоят в одной строке.<br>
+        Например, зашифруем биграмму НЯ. Н находится в первой строке, третьем столбце левого квадрата, а Я в первой строке, четвёртом столбце правого квадрата. Первая буква зашифрованной биграммы берётся из правого квадрата в первой строке, в третьем столбце (потому что в левом квадрате на данной позиции расположена буква Н - первая буква исходной биграммы). Вторая буква зашифрованной биграммы берётся из левого квадрата, в первой строке, в четвёртом столбце (то есть в позиции, в которой находится вторая буква исходной биграммы в правом квадрате). Таким образом, биграмма НЯ перейдёт в ГЮ.
+	</div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ПОПРОБОВАТЬ ЗАШИФРОВАТЬ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

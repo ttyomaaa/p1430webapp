@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Таблица Тритемия</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+        <b>Историческая справка:</b><br>
+        Иоганн Тритемий, аббат монастыря Шпонхейм, живший в Германии в XV веке, в своей книге <i>«Полиграфия»</i> описал новаторский способ шифрования, построенный на основании периодически сдвигаемого ключа и названный впоследствии <i>«Таблица Тритемия»</i>.<br><br>
+        Его суть состоит в том, что замену для каждой буквы из алфавита берут из специальной таблицы, построенной следующим образом: каждая следующая строка берется со смещением на одну букву. Первая буква текста шифруется по первой строке, вторая – по второй и так далее, пока длина текста не превысит длину алфавита и шифрование снова не будет проводиться с первой строки.<br><br>
+        Преимущество данного метода перед шифром Альберти, заключается в том, что для каждой буквы задействован новый алфавит, когда как Альберти менял алфавиты только после трех-четырёх слов. Поэтому шифртекст состоял из отрезков, каждый из которых обладал закономерностями открытого текста, которые помогали вскрыть криптограмму.<<br><br>
+        Данный шифр – первый нетривиальный пример периодического шифра. Так называется многоалфавитный шифр, правило зашифрования которого состоит в использовании периодически повторяющейся последовательности простых замен.
+        <img src="img1.png">
+    </div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ВЕРНУТЬСЯ В МЕНЮ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

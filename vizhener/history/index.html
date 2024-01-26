@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Шифр Виженера</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+        <b>Историческая справка:</b><br>
+        Создание шифра Виженера стало важной вехой в развитии криптографии. Блез Виженер, французский дипломат и криптограф, живший в XVI веке, ознакомился с трудами Альберти, Порты, Тритемия и обобщил их идеи в шифр, названный впоследствии в его честь.<br><br>
+        Суть этого шифра заключается в том, что в процессе шифрования для букв открытого текста используются разные шифралфавиты, которые выбираются в соответствии с кодовым словом. Таким образом, шифр Виженера, будучи многоалфавитным, был неуязвим для методов криптоанализа тех лет и многие годы считался невзламываемым.<br><br>
+        Метод криптоанализа шифра Виженера был разработан независимо офицером прусской армии, немецким шифровальщиком Фридрихом Касиски и английским математиком Чарльзом Бэббиджем в XIX веке. Так как Касиски первым опубликовал свое открытие, метод был назван в его честь.<br><br>
+        Шифр Виженера, будучи достаточно простым для использования в полевых условиях, был популярен среди военных. Например солдаты Конфедеративных Штатов Америки использовали латунный шифровальный диск для реализации шифра Виженера во время Гражданской войны в США.<br>
+        <img src="img1.png">
+    </div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ВЕРНУТЬСЯ В МЕНЮ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

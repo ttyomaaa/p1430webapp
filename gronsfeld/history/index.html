@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Шифр Гронсфельда</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+        <b>Историческая справка:</b><br>
+        Шифр Гронсфельда – многоалфавитный шифр, созданный графом Гронсфельдом, руководителем специальной дешифровальной службы Германии в XVII веке.<br><br>
+        Этот шифр – усовершенствованный шифр Виженера, где вместо буквенного пароля использовался числовой, а вместо громоздкой квадратной таблицы – намного меньшая и простая.<br><br>
+        Но у этого шифра есть недостаток - в отличие от шифра Виженера,где используется всего 10 различных алфавитов для замены буквы, тогда как в шифре Виженера их 26.<br><br>
+        Так называемая <i>“Таблица Гронсфельда”</i> для английского алфавита приведена ниже.<br>
+        <img src="img1.png">
+    </div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ВЕРНУТЬСЯ В МЕНЮ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

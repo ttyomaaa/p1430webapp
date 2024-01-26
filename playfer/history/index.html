@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Шифр Плейфера</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+        <b>Историческая справка:</b><br>
+        Этот шифр был создан английским физиком Чарльзом Уитстоном в 1854 году, но носит имя лорда Лайона Плейфера, способствовавшего применению этого способа шифрования к документам государственного уровня.<br><br> 
+        Не требующий какого-либо дополнительного специального оборудования и будучи достаточно простым в использовании, шифр Плейфера активно применялся военными, в том числе во время Первой мировой войны.<br><br>
+        Суть шифра заключается замене биграмм(а не каждой буквы по отдельности), что делает его более стойким к частотному анализу по сравнению с шифрами простой замены, где заменяются буквы.<br><br>
+        Для английского алфавита для этого шифра используется матрица 5x5 (так как в английском алфавите 26 букв, буква Q не используется). Выбирается ключ, который может быть записан либо слева направо сверху вниз, либо по спирали из левого верхнего угла в центр.<br><br>
+        Сообщение, которое необходимо зашифровать, разбивается на пары букв, замены для которых находят в заполненной матрице.<br>
+        <img src="img1.png"><br>
+        Чарльз Уитстон
+    </div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ВЕРНУТЬСЯ В МЕНЮ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

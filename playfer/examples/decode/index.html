@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Шифр Плейфера</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+		<b>Пример расшифрования:</b><br>
+		Расшифруем сообщение <i>"ЬСРИДОСТС ЬПЬЛИДСОБ!"</i> с ключевым словом <i>“Криптография”</i>. Сначала нужно заполнить матрицу:<br>
+        <img src="img1.png"><br>
+        Разобьем только буквы открытого текста на пары: <i>"ЬС РИ ДО СТ СЬ ПЬ ЛИ ДС ОБ"</i>.<br><br>
+        Разберем несколько случаев:<br>
+        1. Пара “ЬС”.<br>
+        Буквы находятся в одном столбце, поэтому заменяем их на буквы, находящиеся над ними, получаем замену “СЕ”.<br>
+        <img src="img2.png"><br><br>
+        2. Пара “РИ”.<br>
+        Буквы находятся в одной строке, поэтому заменяем их на буквы, находящиеся слева, получается “КР”.<br>
+        <img src="img3.png"><br><br>
+        Пара “ПЬ”.<br>
+        Буквы находятся в разных столбцах и строках, поэтому строим диагональ. Пара “ПЬ” образует диагональ, обозначенную зелёной стрелкой. А фиолетовой обозначены замены для этих букв - “ОЪ”.<br>
+        <img src="img4.png"><br>
+        Получившийся открытый текст: <i>"СЕ КР ЕТ НО ЕС ОЪ БЩ ЕН ИЕ"</i>.
+        Так как сочетание “ОЪ” не имеет смысла, меняем на “ОО”. Расставляем пробелы и получаем открытый текст со всеми знаками <i>“Секретное сообщение!”</i>.
+	</div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ПОПРОБОВАТЬ РАСШИФРОВАТЬ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

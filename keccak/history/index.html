@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Алгоритм хэширования (Keccak)</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+        <b>Историческая справка:</b><br>
+        В 2012 алгоритм хеширования Keccak стал победителем конкурса криптографических алгоритмов, который проводился с целью принятия нового стандарта SHA-3.<br>
+        Идея создания новой хеш-функции возникла из-за уязвимостей и проблем, обнаруженных в ранее использовавшихся алгоритмах хэширования, таких как MD5 и SHA-2. Эти алгоритмы уже стали устаревшими и подвержены атакам, поэтому требовалось разработать новый стандарт, который был бы более надежным и безопасным.<br>
+        <br>
+        Алгоритм был разработан Гвидо Бертони, Йоаном Дайменом, Жилем Ван Ашеиз STMicroelectronics и Микаэлем Питерсом из NXP Алгоритм основан на более ранних хеш-функциях Panama и RadioGatún. Panama был разработан Дайменом и Крейгом Клэппом в 1998 году, RadioGatún был реализован на основе Panama Дайменом, Питерсом и Ван Аше в 2006 году.<br>
+        <br>
+        Преимуществами Keccak является то, что:<br>
+        &emsp;• Этот алгоритм стал самым производительным на аппаратной реализации среди финалистов конкурса криптографических алгоритмов, а также использовал распространенный принцип sponge-конструкции;<br>
+        &emsp;• Атаки, рассчитанные на предыдущие алгоритмы SHA-1 и SHA-2, не применимы к данному алгоритму;<br>
+        &emsp;• Keccak возможно реализовать на миниатюрных встраиваемых устройствах;<br>
+        &emsp;• Малейшее изменение исходного сообщения приводит к значительным изменениям хеш-значения<br>
+    </div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ВЕРНУТЬСЯ В МЕНЮ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

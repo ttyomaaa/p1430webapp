@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Энигма</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+        <b>Историческая справка:</b><br>
+        “Энигма” - по-настоящему легендарная шифровальная машина, которая активно использовалась во время Второй мировой войны в гитлеровской Германии.<br><br>
+        Создатель Энигмы, Артур Шербиус, - немецкий инженер, изучал электротехнику в техническом университете Мюнхена, защитил диссертацию, став доктором инженерных наук около 1904 года.<br>
+        Работал на ряд компаний, занимающихся электрическим оборудованием в Германии и Швейцарии до 1918 года, а в 1918 стал сооснователем фирмы «Шербиус и Риттер», занимавшейся всевозможными электроприборами.В том же году подал первую заявку на патент на роторную шифровальную машину.<br>
+        <br><img src="img1.png"><br><br>
+        “Энигма”, чья первая коммерческая версия была представлена в 1923 году, в течение следующих 20 лет претерпела множество конструкторских изменений, далеко не сразу став классической и наиболее известной версией шифровальной машинки.<br>
+        <br><img src="img2.png"><br><br>
+        В основе “Энигмы” лежали шифровальные диски. В разных моделях количество используемых дисков менялось, например, если в первой версии их было всего 3, когда как в более поздних моделях их количество выросло до 8, а версия “Kriegsmarine M4” также требовала ротор особой группы - Бета или Гамма.<br>
+        <br>
+        Таблица внутренних перепаек роторов приведена ниже.<br>
+        <br><img src="img3.png"><br><br>
+        В модели Enigma C(1924) был использован рефлектор -  неподвижный ротор, в котором подпружиненные контакты перепаяны попарно между собой. Рефлектор позволял  «отразить» сигнал обратно в шифровальные диски, за счет чего процесс шифрования и расшифрования становился симметричным (одинаковым). Таким образом, например, если буква А заменялась на В, то буква В заменялась на А.<br>
+        <br>
+        Таблица с внутренними перепайками отражателя представлена ниже.<br>
+        <br><img src="img4.png"><br><br>
+        И, наконец, расскажем о коммутационной панели, впервые появившейся в модели Enigma I в 1932 году. Это набор разъемов по числу символов, зашифровываемых машиной.<br>
+        <br>
+        Разъемы могут попарно соединяться кабелями, в этом случае после нажатия клавиши сигнал перенаправляется на другой контакт входного диска согласно соединению кабелем.<br>
+        <br>
+        Например, “A” и “W” могли быть соединены в пару. Например, когда оператор нажимал «A», сигнал направлялся в «W», и только после этого уже во входной диск.<br>
+        <br>
+        Коммутационная панель вносит наибольшее количество вариантов в множество ключей «Энигмы».<br>
+        <br><img src="img5.png"><br><br>
+    </div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ВЕРНУТЬСЯ В МЕНЮ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Энигма</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+		<b>Процедура шифрования:</b><br>
+        Для шифрования использовался ключ дня, который состоял из следующих пунктов:<br>
+        &emsp;1. Дата – день месяца, на который действителен ключ;<br>
+        &emsp;2. Диски – три номера дисков, которые занимают позиции 1, 2 и 3 соответственно;<br>
+        &emsp;3. Кольца – настройки колец на соответствующих дисках. Кольцо определяло, в какой позиции диск «передаст» вращение соседнему диску;<br>
+        &emsp;4. Настройки коммутационной панели – пары разъемов, соединенных кабелями;<br>
+        &emsp;5. Идентификационные группы – используются для выработки буквенной идентификационной группы.<br>
+        <br><img src="img1.png"><br><br>
+        Порядок настройки по ключу дня:<br>
+        &emsp;1. Выбор набора и порядка дисков<br>
+        &emsp;2. Установка колец в нужные положения<br>
+        &emsp;3. Установка кабелей коммутационной панели<br>
+        &emsp;4. Выбор идентификационной группы (одной из 4 по 3 буквы в каждой)<br>
+        &emsp;5. Выработка буквенной идентификационной группы – 2 случайные буквы + идентификационная группа из ключа дня<br>
+        <br>
+        Также использовался одноразовый ключ, который до 1940 г. выбирался по такому принципу:<br>
+        &emsp;• Выбирается произвольный ключ из 3 букв (ориентация роторов) – например, GHK;<br>
+        &emsp;• Выбранный ключ шифруется дважды на ключе дня, что приводит к сообщению  XMC FZQ;<br>
+        &emsp;• Роторы устанавливаются в позицию GHK;<br>
+        &emsp;• Осуществляется шифрование сообщения.<br>
+        <br>
+        Но уже после 1940 г. процесс изменился:<br>
+        &emsp;• Выбирается случайная стартовая позиция, например WZA;<br>
+        &emsp;• Выбирается произвольный ключ, например, SXT;<br>
+        &emsp;• Диски устанавливаются в позицию WZA и выбранный ключ зашифровывается как сообщение, например, получая результат UHL;<br>
+        &emsp;• Диски устанавливаются в позицию SXT;<br>
+        &emsp;• Осуществляется шифрование сообщения;<br>
+        <br>
+        <i>Итоговый вид сообщения:</i><br>
+        1230 = 3tle = 1tl = 250 = WZA UHL = <br>
+        JKGLP 	SQTGS 	ABTRQ 	PTWYB 	LENDP<br>
+        Сообщение отправлено в 12:30 = Состоит из 3 частей(3 teile) = Это первая часть сообщения(1 teil) = Она состоит из 180 символов = Стартовая позиция + ключ сообщения = Идентификационная группа
+	</div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ПОПРОБОВАТЬ ЗАШИФРОВАТЬ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>

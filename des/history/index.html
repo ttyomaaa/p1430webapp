@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DES</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+   <style>
+       body{
+           font-family: system-ui;
+           color: var(--tg-theme-text-color);
+           background: var(--tg-theme-bg-color);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           font-size: 16px;
+       }
+
+       button{
+           margin:auto;
+           display:block;
+       }
+
+       button {
+           font-family: system-ui;
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 268px;
+       }
+
+       img {
+            width:100vw;
+            height:auto;
+            max-width:100%;
+       }
+
+       .hint{
+           color: var(--tg-theme-hint-color);
+       }
+       .link{
+           color: var(--tg-theme-link-color);
+       }
+
+       .button{
+           background: var(--tg-theme-button-color);
+           color: var(--tg-theme-button-text-color);
+           border: none;
+           font-size: 32px;
+       }
+
+       .button:not(:last-child){
+           margin-bottom: 32px
+       }
+
+       .form_text{
+           font-family: system-ui;
+           color: var(--tg-theme-button-text-color);
+           font-size: 18px;
+           width: 260px;
+       }
+
+
+   </style>
+</head>
+
+<body>
+	<div>
+        <b>Историческая справка:</b><br>
+        DES (Data Encryption Standard) - это симметричный алгоритм блочного шифрования, разработанный в 1970-х годах и принятый Национальным институтом стандартов и технологий (NIST) в 1977 году в качестве стандарта для защиты конфиденциальной информации. DES был разработан командой IBM под руководством Эдварда Фейхера и имеет ключевую длину в 56 бит.<br>
+        DES (Data Encryption Standard) был разработан в 1970-х годах в ответ на потребность в стандартизированном алгоритме шифрования для защиты конфиденциальной информации в системах обмена данных. В это время существовало множество различных алгоритмов шифрования, но отсутствовало единое стандартное решение.<br>
+        <br>
+        История DES началась в 1973 году, когда Национальное бюро стандартов (NBS), предшественник Национального института стандартов и технологий (NIST), опубликовало запрос предложений  на разработку нового стандарта шифрования. Этот запрос был ответом на растущую потребность в надежном методе шифрования для защиты государственных и коммерческих данных.<br>
+        <br>
+        DES был разработан командой криптографов из IBM под руководством Эдварда Фейхера. Этот алгоритм блочного шифрования был представлен NIST и выбран в 1977 году в качестве стандарта для защиты неклассифицированной государственной информации. Однако с течением времени и с развитием вычислительных технологий стало ясно, что 56-битный ключ, используемый в DES, может быть подвержен атакам перебора ключа.Это привело к тому, что NIST объявил конкурс на разработку нового стандарта шифрования, который впоследствии привел к созданию AES. Однако DES остается важным моментом в истории криптографии, поскольку он стал первым широко принятым и стандартизированным алгоритмом шифрования данных.<br>
+    </div>
+</body>
+
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+    var MainButton = WebApp.MainButton;
+
+    MainButton.setText("ВЕРНУТЬСЯ В МЕНЮ");
+    MainButton.show();
+
+    WebApp.onEvent('mainButtonClicked', function() {
+	    WebApp.close()
+    });
+
+</script>
+</html>
